@@ -1,0 +1,18 @@
+includes:
+	- vendor/phpstan/phpstan-phpunit/extension.neon
+	- vendor/phpstan/phpstan-phpunit/rules.neon
+	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
+parameters:
+	paths:
+		- src/
+		- tests/
+	tmpDir: %currentWorkingDirectory%/.phpstan
+	level: 9
+	inferPrivatePropertyTypeFromConstructor: true
+	checkMissingIterableValueType: true
+	checkGenericClassInNonGenericObjectType: true
+	checkUninitializedProperties: true
+	checkExplicitMixed: true
