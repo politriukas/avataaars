@@ -11,6 +11,7 @@ PHP Library for generating SVG avatars based on [React Avataaars](https://github
 ```php
 <?php
 
+use Politriukas\Avataaars\Avatar;
 use Politriukas\Avataaars\AvatarStyle;
 use Politriukas\Avataaars\Clothing\ClothingColor;
 use Politriukas\Avataaars\Clothing\GraphicShirt;
