@@ -8,7 +8,7 @@ use SVG\Nodes\Structures\SVGGroup;
 use function Politriukas\Avataaars\g;
 use function Politriukas\Avataaars\path;
 
-final class CumbiaGraphics implements ClothingGraphics
+final class Cumbia implements Graphics
 {
     public function generate(string $mask): SVGGroup
     {

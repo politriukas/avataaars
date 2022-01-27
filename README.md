@@ -15,7 +15,7 @@ use Politriukas\Avataaars\Avatar;
 use Politriukas\Avataaars\AvatarStyle;
 use Politriukas\Avataaars\Clothing\ClothingColor;
 use Politriukas\Avataaars\Clothing\GraphicShirt;
-use Politriukas\Avataaars\Clothing\Graphics\DeerGraphics;
+use Politriukas\Avataaars\Clothing\Graphics\Deer;
 use Politriukas\Avataaars\Face\DefaultFace;
 use Politriukas\Avataaars\Face\EyeBrows\RaisedExcitedNatural;
 use Politriukas\Avataaars\Face\Eyes\EyeRoll;
@@ -47,7 +47,7 @@ $avatar = (new Avatar())
         ),
         clothing: new GraphicShirt(
             color: ClothingColor::Blue03,
-            graphics: new DeerGraphics(),
+            graphics: new Deer(),
         ),
         style: AvatarStyle::Transparent,
     );

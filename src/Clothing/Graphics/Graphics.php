@@ -6,7 +6,7 @@ namespace Politriukas\Avataaars\Clothing\Graphics;
 
 use SVG\Nodes\SVGNode;
 
-interface ClothingGraphics
+interface Graphics
 {
     public function generate(string $mask): SVGNode;
 }

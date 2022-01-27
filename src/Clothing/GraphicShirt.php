@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Politriukas\Avataaars\Clothing;
 
 use Politriukas\Avataaars\AvatarGlobalId;
-use Politriukas\Avataaars\Clothing\Graphics\ClothingGraphics;
+use Politriukas\Avataaars\Clothing\Graphics\Graphics;
 use SVG\Nodes\Structures\SVGGroup;
 use function Politriukas\Avataaars\defs;
 use function Politriukas\Avataaars\g;
@@ -17,7 +17,7 @@ final class GraphicShirt implements Clothing
 {
     public function __construct(
         private ClothingColor $color,
-        private ClothingGraphics $graphics,
+        private Graphics $graphics,
     ) {
     }
 

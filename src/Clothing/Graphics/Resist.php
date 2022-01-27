@@ -8,7 +8,7 @@ use SVG\Nodes\Structures\SVGGroup;
 use function Politriukas\Avataaars\g;
 use function Politriukas\Avataaars\path;
 
-final class ResistGraphics implements ClothingGraphics
+final class Resist implements Graphics
 {
     public function generate(string $mask): SVGGroup
     {

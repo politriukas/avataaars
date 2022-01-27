@@ -13,7 +13,7 @@ use function Politriukas\Avataaars\path;
 use function Politriukas\Avataaars\polygon;
 use function Politriukas\Avataaars\svgUse;
 
-final class BearGraphics implements ClothingGraphics
+final class Bear implements Graphics
 {
     public function generate(string $mask): SVGGroup
     {
