@@ -18,6 +18,7 @@ enum FacialHairColor: string
     case BrownDark = '#4A312C';
     case Platinum = '#ECDCBF';
     case Red = '#C93305';
+    case SilverGray = '#E8E1E1';
     public function generate(string $mask): SVGGroup
     {
         return g(fill: $this->value, mask: "url(#{$mask})", children: [
