@@ -11,6 +11,7 @@ final class SkinTest extends TestCase
 {
     /**
      * @dataProvider provideTestCases
+     *
      * @runInSeparateProcess
      */
     public function testGenerate(Skin $skin, string $mask, string $expectedSvg): void

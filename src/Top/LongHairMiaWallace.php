@@ -8,6 +8,7 @@ use Politriukas\Avataaars\AvatarGlobalId;
 use Politriukas\Avataaars\Top\Accessory\Accessory;
 use Politriukas\Avataaars\Top\FacialHair\FacialHair;
 use SVG\Nodes\Structures\SVGGroup;
+
 use function Politriukas\Avataaars\defs;
 use function Politriukas\Avataaars\g;
 use function Politriukas\Avataaars\mask;

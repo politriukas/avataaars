@@ -12,6 +12,7 @@ final class HatColorTest extends TestCase
 {
     /**
      * @dataProvider provideTestCases
+     *
      * @runInSeparateProcess
      */
     public function testGenerate(HatColor $hatColor, string $mask, string $expectedSvg): void

@@ -7,6 +7,7 @@ namespace Politriukas\Avataaars\Top;
 use Politriukas\Avataaars\AvatarGlobalId;
 use Politriukas\Avataaars\Top\Accessory\Accessory;
 use SVG\Nodes\Structures\SVGGroup;
+
 use function Politriukas\Avataaars\defs;
 use function Politriukas\Avataaars\feColorMatrix;
 use function Politriukas\Avataaars\feMerge;

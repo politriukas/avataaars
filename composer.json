@@ -12,15 +12,15 @@
     ],
     "require": {
         "php": "^8.1",
-        "meyfa/php-svg": "^0.11"
+        "meyfa/php-svg": "^0.12"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.8",
-        "phpstan/phpstan": "^1.6",
+        "friendsofphp/php-cs-fixer": "^3.13",
+        "phpstan/phpstan": "^1.9.2",
         "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.1",
-        "phpstan/phpstan-strict-rules": "^1.2",
-        "phpunit/phpunit": "^9.5"
+        "phpstan/phpstan-phpunit": "^1.3",
+        "phpstan/phpstan-strict-rules": "^1.4.4",
+        "phpunit/phpunit": "^9.5.26"
     },
     "autoload": {
         "files": ["src/functions.php"],

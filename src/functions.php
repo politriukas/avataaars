@@ -23,6 +23,7 @@ use SVG\Nodes\Structures\SVGMask;
 use SVG\Nodes\Structures\SVGUse;
 use SVG\Nodes\SVGNode;
 use SVG\SVG;
+
 use function array_filter;
 
 /**

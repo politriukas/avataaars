@@ -6,6 +6,7 @@ namespace Politriukas\Avataaars\Face\Mouth;
 
 use Politriukas\Avataaars\AvatarGlobalId;
 use SVG\Nodes\Structures\SVGGroup;
+
 use function Politriukas\Avataaars\circle;
 use function Politriukas\Avataaars\defs;
 use function Politriukas\Avataaars\g;
