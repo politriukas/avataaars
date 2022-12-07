@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Politriukas\Avataaars\Face\Eyes;
 
 use SVG\Nodes\Structures\SVGGroup;
+
 use function Politriukas\Avataaars\circle;
 use function Politriukas\Avataaars\g;
 

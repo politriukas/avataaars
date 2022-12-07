@@ -15,6 +15,7 @@ enum Skin: string
     case Yellow = '#F8D25C';
     case Pale = '#FFDBB4';
     case Light = '#EDB98A';
+
     public function generate(string $mask): SVGGroup
     {
         return g(fill: $this->value, mask: "url(#{$mask})", children: [

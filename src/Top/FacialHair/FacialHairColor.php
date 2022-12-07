@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Politriukas\Avataaars\Top\FacialHair;
 
 use SVG\Nodes\Structures\SVGGroup;
+
 use function Politriukas\Avataaars\g;
 use function Politriukas\Avataaars\rect;
 
@@ -19,6 +20,7 @@ enum FacialHairColor: string
     case Platinum = '#ECDCBF';
     case Red = '#C93305';
     case SilverGray = '#E8E1E1';
+
     public function generate(string $mask): SVGGroup
     {
         return g(fill: $this->value, mask: "url(#{$mask})", children: [

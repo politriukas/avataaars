@@ -9,6 +9,7 @@ use Politriukas\Avataaars\Face\Eyes\Eyes;
 use Politriukas\Avataaars\Face\Mouth\Mouth;
 use Politriukas\Avataaars\Face\Nose\Nose;
 use SVG\Nodes\Structures\SVGGroup;
+
 use function Politriukas\Avataaars\g;
 
 final class DefaultFace implements Face

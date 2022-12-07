@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Politriukas\Avataaars\Face\Mouth;
 
 use SVG\Nodes\Structures\SVGGroup;
+
 use function Politriukas\Avataaars\g;
 use function Politriukas\Avataaars\rect;
 

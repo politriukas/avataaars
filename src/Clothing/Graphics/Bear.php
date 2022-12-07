@@ -6,6 +6,7 @@ namespace Politriukas\Avataaars\Clothing\Graphics;
 
 use Politriukas\Avataaars\AvatarGlobalId;
 use SVG\Nodes\Structures\SVGGroup;
+
 use function Politriukas\Avataaars\defs;
 use function Politriukas\Avataaars\g;
 use function Politriukas\Avataaars\mask;

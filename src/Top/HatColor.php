@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Politriukas\Avataaars\Top;
 
 use SVG\Nodes\Structures\SVGGroup;
+
 use function Politriukas\Avataaars\g;
 use function Politriukas\Avataaars\rect;
 
@@ -25,6 +26,7 @@ enum HatColor: string
     case Pink = '#FF488E';
     case Red = '#FF5C5C';
     case White = '#FFFFFF';
+
     public function generate(string $mask): SVGGroup
     {
         return g(fill: $this->value, fillRule: 'evenodd', mask: "url(#{$mask})", children: [

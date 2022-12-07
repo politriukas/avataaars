@@ -12,6 +12,7 @@ final class HairColorTest extends TestCase
 {
     /**
      * @dataProvider provideTestCases
+     *
      * @runInSeparateProcess
      */
     public function testGenerate(HairColor $hairColor, string $mask, string $expectedSvg): void

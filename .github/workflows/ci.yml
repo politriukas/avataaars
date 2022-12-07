@@ -8,102 +8,64 @@ on:
 jobs:
     php-cs-fixer:
         name: PHP-CS-Fixer
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-22.04
         env:
             php-version: "8.1"
-            key: cache-1
         steps:
             - name: "Checkout"
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: "Setup PHP"
-              uses: shivammathur/setup-php@v2
+              uses: "shivammathur/setup-php@v2"
               with:
                   php-version: ${{ env.php-version }}
-                  tools: cs2pr
-
-            - name: "Get Composer Cache Directory"
-              id: composer-cache
-              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-            - name: "Cache Dependencies"
-              uses: actions/cache@v2
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
-                  restore-keys: ${{ runner.os }}-composer-
-
-            - name: "Install dependencies"
-              run: composer install --prefer-dist --no-progress --no-interaction --optimize-autoloader
+                  tools: cs2pr, php-cs-fixer:3.13
+                  coverage: none
 
             - name: "Run PHP-CS-Fixer"
-              run: vendor/bin/php-cs-fixer fix -v --dry-run --using-cache=no --format=checkstyle | cs2pr
+              run: php-cs-fixer fix -v --dry-run --format=checkstyle | cs2pr
 
     phpstan:
         name: "PHPStan"
         runs-on: ubuntu-20.04
         env:
             php-version: "8.1"
-            key: cache-2
         steps:
             - name: "Checkout"
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: "Setup PHP"
               uses: shivammathur/setup-php@v2
               with:
                   php-version: ${{ env.php-version }}
-                  tools: cs2pr
+                  coverage: none
 
-            - name: "Get Composer Cache Directory"
-              id: composer-cache
-              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-            - name: "Cache Dependencies"
-              uses: actions/cache@v2
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
-                  restore-keys: ${{ runner.os }}-composer-
-
-            - name: "Install dependencies"
-              run: |
-                  composer install --prefer-dist --no-progress --no-interaction --optimize-autoloader
+            - name: "Install Dependencies with Composer"
+              uses: "ramsey/composer-install@v2"
 
             - name: "Run PHPStan"
-              run: vendor/bin/phpstan analyse --error-format=checkstyle | cs2pr
+              run: vendor/bin/phpstan analyse --error-format=github
 
     phpunit:
         name: PHPUnit
         runs-on: ubuntu-20.04
         env:
             php-version: "8.1"
-            key: cache-3
         steps:
             - name: "Checkout"
-              uses: actions/checkout@v2
+              uses: actions/checkout@v3
 
             - name: "Setup PHP"
               uses: shivammathur/setup-php@v2
               with:
-                  php-version: "8.1"
+                  php-version: ${{ env.php-version }}
+                  coverage: pcov
 
-            - name: "Get Composer Cache Directory"
-              id: composer-cache
-              run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-            - name: "Cache Dependencies"
-              uses: actions/cache@v2
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
-                  restore-keys: ${{ runner.os }}-composer-
+            - name: "Install Dependencies with Composer"
+              uses: "ramsey/composer-install@v2"
 
             - name: "Setup Problem Matchers for PHPUnit"
               run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-            - name: "Install Dependencies"
-              run: composer install --prefer-dist --no-progress --no-interaction --optimize-autoloader
-
             - name: "Run PHPUnit"
-              run: vendor/bin/phpunit
+              run: vendor/bin/phpunit --coverage-text

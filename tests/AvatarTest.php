@@ -25,6 +25,7 @@ final class AvatarTest extends TestCase
 {
     /**
      * @dataProvider provideTestCases
+     *
      * @runInSeparateProcess
      */
     public function testGenerate(Skin $skin, Face $face, Top $top, Clothing $clothing, AvatarStyle $style, string $expectedSvg): void

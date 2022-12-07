@@ -8,6 +8,7 @@ use PHPUnit\Framework\Constraint\Constraint;
 use SVG\Nodes\SVGNode;
 use SVG\SVG;
 use SVG\Writing\SVGWriter;
+
 use function sprintf;
 
 final class GeneratesSvgConstraint extends Constraint
@@ -41,7 +42,7 @@ final class GeneratesSvgConstraint extends Constraint
      */
     protected function failureDescription($other): string
     {
-        return sprintf('"%s"%s equals to "%s" svg', get_debug_type($other), ($other instanceof SVG || $other instanceof SVGNode ? " ({$this->getXmlFromSvgNode($other)})" : ''), $this->expectedSvg);
+        return sprintf('"%s"%s equals to "%s" svg', get_debug_type($other), $other instanceof SVG || $other instanceof SVGNode ? " ({$this->getXmlFromSvgNode($other)})" : '', $this->expectedSvg);
     }
 
     private function getXmlFromSvgNode(SVG|SVGNode $node): string
