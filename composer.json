@@ -12,11 +12,11 @@
     ],
     "require": {
         "php": "^8.1",
-        "meyfa/php-svg": "^0.13"
+        "meyfa/php-svg": "^0.14"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.13.1",
-        "phpstan/phpstan": "^1.9.4",
+        "php-cs-fixer/shim": "^3.9",
+        "phpstan/phpstan": "^1.9.7",
         "phpstan/phpstan-deprecation-rules": "^1.1.1",
         "phpstan/phpstan-phpunit": "^1.3.3",
         "phpstan/phpstan-strict-rules": "^1.4.4",
